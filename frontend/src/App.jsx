@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import AdminDashboard from './pages/AdminDashboard';
+import AdminUserAnalysis from './pages/AdminUserAnalysis';
 import Productivity from './pages/Productivity';
 import Navbar from './components/Navbar';
 
@@ -41,6 +42,11 @@ function App() {
                 <Route path="/admin" element={
                   <PrivateRoute adminOnly={true}>
                     <AdminDashboard />
+                  </PrivateRoute>
+                } />
+                <Route path="/admin/performance/:userId" element={
+                  <PrivateRoute adminOnly={true}>
+                    <AdminUserAnalysis />
                   </PrivateRoute>
                 } />
               </Routes>
